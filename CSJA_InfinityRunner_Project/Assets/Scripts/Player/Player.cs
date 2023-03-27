@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int health;
     public float speed;
     public float jumpForce;
     private bool isJumping;
 
     private Rigidbody2D rigPlayer;
     public Animator playerAnim;
+    public GameObject bulletPrefab;
+    public Transform firePoint;
 
     void Start()
     {
@@ -23,11 +26,36 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            playerAnim.SetBool("jumping", true);
-            isJumping = true;
+            OnShoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnJump();
+        }
+    }
+
+    public void OnShoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    public void OnJump()
+    {
+        rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        playerAnim.SetBool("jumping", true);
+        isJumping = true;
+    }
+
+    public void OnHit(int dmg)
+    {
+        health -= dmg;
+
+        if (health <= 0)
+        {
+            GameController.instance.ShowGameOver();
         }
     }
 
