@@ -32,7 +32,7 @@ Future Updates:<br>
 - [ ] Add record time
 - [ ] Add difficult speed(it'll increases by the time)
 - [ ] Add UI player stats(life, time, time record, points)
-- [...] Add enemy 06 like a kamikaze switching red and normal color
+- [ ] `In progress` Add enemy 06 like a kamikaze switching red and normal color
 - [ ] Add collison FX 03 when player or enemies explodes
 - [ ] Add sounds in the game(player fly, player shoot, enemies and player death, enemy shoot, coin colleted and background song)
 
@@ -42,4 +42,4 @@ Some Ajusts:<br>
 
 - [x] Ajust UI image and position player in front of button fly
 - [x] Player not can grab on walls
-- [...] General balancement in the game
+- [ ] `In progress` General balancement in the game
