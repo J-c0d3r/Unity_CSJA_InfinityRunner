@@ -10,12 +10,6 @@ public class BombEnemy : Enemy
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private Transform firePoint;
 
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
         throwCount += Time.deltaTime;

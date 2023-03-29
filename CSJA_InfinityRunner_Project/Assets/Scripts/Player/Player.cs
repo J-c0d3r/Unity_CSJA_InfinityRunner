@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public float jumpForce;
     private bool isJumping;
 
+    private float shootDelay = 0.1f;
+    private float timeShoot;
+
     private Rigidbody2D rigPlayer;
     public Animator playerAnim;
     public GameObject bulletPrefab;
@@ -22,24 +25,30 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         rigPlayer.velocity = new Vector2(speed, rigPlayer.velocity.y);
-    }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            OnShoot();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             OnJump();
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            OnShoot();
+        }        
+    }    
+
     public void OnShoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        timeShoot += Time.deltaTime;
+        if (timeShoot >= shootDelay)
+        {
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            timeShoot = 0f;
+        }
+        
     }
 
     public void OnJump()

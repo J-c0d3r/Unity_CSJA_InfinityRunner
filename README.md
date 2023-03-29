@@ -18,18 +18,28 @@ Updates after conclusion the module:
 
 Fix Bugs:<br>
 
-- [ ] Some enemies aren't destroyed by the player's bullet
+- [x] Some enemies aren't destroyed by the player's bullet
+- [x] Take off the white line from brackground image
 
 <br>
 
 Future Updates:<br>
 
+- [x] Change mecanic that player jump to player fly
 - [ ] Generation platforms with aleatory
 - [ ] Add powerlife to increase player's life
 - [ ] Add Coins on the platforms that makes generates points
 - [ ] Add record time
 - [ ] Add difficult speed(it'll increases by the time)
 - [ ] Add UI player stats(life, time, time record, points)
-- [ ] Add enemy 06 like a kamikaze switching red and normal color
+- [...] Add enemy 06 like a kamikaze switching red and normal color
 - [ ] Add collison FX 03 when player or enemies explodes
 - [ ] Add sounds in the game(player fly, player shoot, enemies and player death, enemy shoot, coin colleted and background song)
+
+<br>
+
+Some Ajusts:<br>
+
+- [x] Ajust UI image and position player in front of button fly
+- [x] Player not can grab on walls
+- [...] General balancement in the game

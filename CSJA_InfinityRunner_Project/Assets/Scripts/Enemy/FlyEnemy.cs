@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyEnemy : Enemy
-{
-    private Player player;
+{    
     private Rigidbody2D rig;
     public float speed;
 
@@ -16,16 +15,10 @@ public class FlyEnemy : Enemy
         Destroy(gameObject, 5f);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         rig.velocity = Vector2.left * speed;
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            player.OnHit(damage);
-        }
-    }
+
 }
