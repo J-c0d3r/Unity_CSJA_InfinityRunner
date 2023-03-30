@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4340144d139334bb832b2135f7b51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
+  health: 18
   damage: 2
+  explosionDeath: {fileID: 2017492363048884766, guid: 43816f5a7104a5045846be8292dc1191, type: 3}
   speed: 1
 --- !u!212 &4309773431558280307
 SpriteRenderer:

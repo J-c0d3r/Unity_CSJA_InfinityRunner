@@ -12,14 +12,19 @@ public class Player : MonoBehaviour
     private float shootDelay = 0.1f;
     private float timeShoot;
 
+    private SpriteRenderer spriteRenderer;
+    private Collider2D coll;
     private Rigidbody2D rigPlayer;
     public Animator playerAnim;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public GameObject explosionDeath;
 
     void Start()
     {
         rigPlayer = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        coll = GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
@@ -54,7 +59,7 @@ public class Player : MonoBehaviour
     public void OnJump()
     {
         rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        playerAnim.SetBool("jumping", true);
+        playerAnim.SetBool("jumping", true);       
         isJumping = true;
     }
 
@@ -63,7 +68,11 @@ public class Player : MonoBehaviour
         health -= dmg;
 
         if (health <= 0)
-        {
+        {            
+            GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
+            Destroy(e, 0.58f);
+            coll.enabled = false;
+            spriteRenderer.enabled = false;
             GameController.instance.ShowGameOver();
         }
     }

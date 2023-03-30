@@ -2,7 +2,7 @@
 
 This project is about a little Infinity Runner game that can be played on PC or Mobile. I started make it in the course module, however after I finished it I decided implement more features and you can check below. If you want to play it check the link also below.
 
-Link: "link"
+Link: 🚧`In progress`🚧
 
 <br>
 
@@ -33,7 +33,9 @@ Future Updates:<br>
 - [ ] Add difficult speed(it'll increases by the time)
 - [ ] Add UI player stats(life, time, time record, points)
 - [ ] `In progress` Add enemy 06 like a kamikaze switching red and normal color
-- [ ] Add collison FX 03 when player or enemies explodes
+- [x] Add collison FX 03 when player or enemies explodes
+- [ ] `In progess` Add feedback visual for player when your character receive any damage
+- [ ] Add smoke FX when player are flying
 - [ ] Add sounds in the game(player fly, player shoot, enemies and player death, enemy shoot, coin colleted and background song)
 
 <br>
@@ -42,4 +44,5 @@ Some Ajusts:<br>
 
 - [x] Ajust UI image and position player in front of button fly
 - [x] Player not can grab on walls
+- [x] When player dies the game continuos running for 1.5 seconds
 - [ ] `In progress` General balancement in the game

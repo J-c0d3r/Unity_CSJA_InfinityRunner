@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public int health;
     public int damage;
 
+    public GameObject explosionDeath;
+
     public virtual void ApplyDamage(int dmg)
     {
         health -= dmg;
@@ -15,6 +17,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
+            Destroy(e, 0.29f);
         }
     }
 

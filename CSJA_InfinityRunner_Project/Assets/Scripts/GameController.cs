@@ -28,6 +28,13 @@ public class GameController : MonoBehaviour
 
     public void ShowGameOver()
     {
+        StartCoroutine(ShowGameOverCoroutine());
+        
+    }
+
+    IEnumerator ShowGameOverCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
     }

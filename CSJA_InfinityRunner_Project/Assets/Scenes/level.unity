@@ -567,7 +567,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 3c0b86f7359de1a4a8db789b6ec78794, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -589,7 +589,7 @@ Animator:
   m_GameObject: {fileID: 472558977}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7146b057111e88d489422ae9f7bee9f0, type: 2}
+  m_Controller: {fileID: 9100000, guid: b29444550f9db18468bc7c0f37d587df, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2073,12 +2073,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1300b2345aade41b493210696d282e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1056
   speed: 5
   jumpForce: 1.2
   playerAnim: {fileID: 472558980}
   bulletPrefab: {fileID: 2070821284612412899, guid: acd46fc41bfc4404ca15461794f804f2, type: 3}
   firePoint: {fileID: 2141862275}
+  explosionDeath: {fileID: 2017492363048884766, guid: 43816f5a7104a5045846be8292dc1191, type: 3}
 --- !u!50 &2005838090
 Rigidbody2D:
   serializedVersion: 4
@@ -2147,60 +2148,3 @@ Transform:
   m_Father: {fileID: 2005838088}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5102220469621058027
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681171, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102220470706681181, guid: 3d755f20630900949931e9211bc0beca, type: 3}
-      propertyPath: m_Name
-      value: FlyEnemy4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3d755f20630900949931e9211bc0beca, type: 3}
