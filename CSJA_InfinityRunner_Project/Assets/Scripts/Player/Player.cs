@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public float jumpForce;
     private bool isJumping;
 
+    private bool recovery;
+
     private float shootDelay = 0.1f;
     private float timeShoot;
 
@@ -18,13 +20,18 @@ public class Player : MonoBehaviour
     public Animator playerAnim;
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public GameObject explosionDeath;
+    public GameObject explosionDeath;  
+    
+    public smoke smoke;
+    public Transform smokePoint;
+
+    public GameObject collectedFX;
 
     void Start()
     {
         rigPlayer = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        coll = GetComponent<Collider2D>();
+        coll = GetComponent<Collider2D>();        
     }
 
     private void FixedUpdate()
@@ -58,6 +65,7 @@ public class Player : MonoBehaviour
 
     public void OnJump()
     {
+        smoke.createSmoke();
         rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         playerAnim.SetBool("jumping", true);       
         isJumping = true;
@@ -65,16 +73,37 @@ public class Player : MonoBehaviour
 
     public void OnHit(int dmg)
     {
-        health -= dmg;
+        if (!recovery)
+        {                   
+            health -= dmg;
 
-        if (health <= 0)
-        {            
-            GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
-            Destroy(e, 0.58f);
-            coll.enabled = false;
-            spriteRenderer.enabled = false;
-            GameController.instance.ShowGameOver();
+            if (health <= 0)
+            {
+                //play audio    
+                GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
+                Destroy(e, 0.33f);
+                coll.enabled = false;
+                spriteRenderer.enabled = false;
+                GameController.instance.ShowGameOver();
+            }
+            else
+            {
+                //play audio    
+                playerAnim.SetTrigger("hit");
+            }
         }
+        else
+        {
+            StartCoroutine(OnHitCorroutine());
+        }
+              
+    }
+
+    IEnumerator OnHitCorroutine()
+    {
+        recovery = true;
+        yield return new WaitForSeconds(1f);
+        recovery = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -83,6 +112,19 @@ public class Player : MonoBehaviour
         {
             playerAnim.SetBool("jumping", false);
             isJumping = false;
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("powerLife"))
+        {
+            //play audio
+            health += 2;
+            Destroy(collision.gameObject, 0.05f);
+            GameObject obj = Instantiate(collectedFX, collision.transform.position, collision.transform.rotation);
+            Destroy(obj, 0.33f);
         }
     }
 }

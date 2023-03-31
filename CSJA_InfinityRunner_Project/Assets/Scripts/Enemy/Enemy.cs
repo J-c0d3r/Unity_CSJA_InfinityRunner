@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public int health;
     public int damage;
 
+    protected int receiveDmg = 2;
+
     public GameObject explosionDeath;
 
     public virtual void ApplyDamage(int dmg)
@@ -16,9 +18,10 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            //play audio
             Destroy(gameObject);
             GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
-            Destroy(e, 0.29f);
+            Destroy(e, 0.5f);
         }
     }
 
@@ -33,7 +36,7 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.OnHit(damage);
-            ApplyDamage(2);
+            ApplyDamage(receiveDmg);
         }
 
     }

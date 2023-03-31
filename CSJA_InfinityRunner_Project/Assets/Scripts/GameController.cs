@@ -28,8 +28,7 @@ public class GameController : MonoBehaviour
 
     public void ShowGameOver()
     {
-        StartCoroutine(ShowGameOverCoroutine());
-        
+        StartCoroutine(ShowGameOverCoroutine());        
     }
 
     IEnumerator ShowGameOverCoroutine()

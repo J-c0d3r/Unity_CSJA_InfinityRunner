@@ -7,6 +7,7 @@ public class FlyEnemy : Enemy
     private Rigidbody2D rig;
     public float speed;
 
+    [SerializeField] private bool isKamikaze;
 
     void Start()
     {
@@ -20,5 +21,17 @@ public class FlyEnemy : Enemy
         rig.velocity = Vector2.left * speed;
     }
 
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {        
+        if (isKamikaze)
+        {
+            base.receiveDmg = health;
+            base.OnTriggerEnter2D(collision);
+        }
+        else
+        {
+            base.OnTriggerEnter2D(collision);
+        }
+    }
 
 }
