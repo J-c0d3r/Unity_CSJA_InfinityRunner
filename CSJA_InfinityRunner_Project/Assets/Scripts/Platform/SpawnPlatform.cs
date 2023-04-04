@@ -7,10 +7,12 @@ public class SpawnPlatform : MonoBehaviour
     public float offset;
 
     private Transform player;
-    private Transform currentPlatformPoint;
-    private int platformIndex;
+    private Transform createPointPlatform;
+    private Transform destroyPointPlatform;
+    //private int platformIndex;
     public List<GameObject> platform = new List<GameObject>();
-    private List<Transform> currentPlatform = new List<Transform>();
+    private List<GameObject> currentListPlatform = new List<GameObject>();
+    private List<GameObject> newListPlatform = new List<GameObject>();
 
     void Start()
     {
@@ -18,12 +20,15 @@ public class SpawnPlatform : MonoBehaviour
 
         for (int i = 0; i < platform.Count; i++)
         {
-            Transform p = Instantiate(platform[i], new Vector2(i * 30, -4.5f), transform.rotation).transform;
-            currentPlatform.Add(p);
+            int num = Random.Range(0, 4);
+            GameObject obj = Instantiate(platform[num], new Vector2(i * 30, -4.5f), transform.rotation);
+            currentListPlatform.Add(obj);
             offset += 30f;
         }
 
-        currentPlatformPoint = currentPlatform[platformIndex].GetComponent<Platform>().finalPoint;
+        createPointPlatform = currentListPlatform[2].GetComponent<Platform>().finalPoint;
+        destroyPointPlatform = currentListPlatform[0].GetComponent<Platform>().finalPoint;
+
     }
 
 
@@ -32,32 +37,68 @@ public class SpawnPlatform : MonoBehaviour
         Move();
     }
 
+
     void Move()
     {
-        float distance = player.position.x - currentPlatformPoint.position.x;
+        //Destroy
+        float distanceToDestroy = player.position.x - destroyPointPlatform.position.x;
 
-        if (distance >= 1)
+        if (distanceToDestroy >= 1)
         {
-            Recycle(currentPlatform[platformIndex].gameObject);
-            // Recycle(currentPlatform[Random.Range(0, platform.Count)].gameObject);
-            platformIndex++;
-
-            if (platformIndex > currentPlatform.Count - 1)
+            if (newListPlatform.Count > 0)
             {
-                platformIndex = 0;
+                for (int i = 0; i < platform.Count; i++)
+                {
+                    Destroy(currentListPlatform[i]);
+                }
+
+                currentListPlatform.Clear();
+                currentListPlatform.AddRange(newListPlatform);
+                newListPlatform.Clear();
+
             }
+
+            // !!! OLD CODE
+            //Recycle(currentPlatform[platformIndex].gameObject);            
+            //platformIndex++;
+
+            //if (platformIndex > currentPlatform.Count - 1)
+            //{
+            //    platformIndex = 0;
+            //}
         }
-    }
 
-    public void Recycle(GameObject platform)
-    {
-        platform.transform.position = new Vector2(offset, -4.5f);
 
-        if (platform.GetComponent<Platform>().spawnObj != null)
+        //Create
+        float distanceToCreate = player.position.x - createPointPlatform.position.x;
+
+        if (distanceToCreate >= 1)
         {
-            platform.GetComponent<Platform>().spawnObj.Spawn();
+            for (int i = 0; i < platform.Count; i++)
+            {
+                int num = Random.Range(0, 4);
+                GameObject obj = Instantiate(platform[num], new Vector2(offset, -4.5f), transform.rotation);
+                newListPlatform.Add(obj);
+                offset += 30f;
+            }
+
+            createPointPlatform = newListPlatform[2].GetComponent<Platform>().finalPoint;
+            destroyPointPlatform = newListPlatform[0].GetComponent<Platform>().finalPoint;
         }
 
-        offset += 30f;
+
     }
+
+    // !!! OLD CODE
+    //public void Recycle(GameObject platform)
+    //{
+    //    platform.transform.position = new Vector2(offset, -4.5f);
+
+    //    if (platform.GetComponent<Platform>().spawnObj != null)
+    //    {
+    //        platform.GetComponent<Platform>().spawnObj.Spawn();
+    //    }
+
+    //    offset += 30f;
+    //}
 }
