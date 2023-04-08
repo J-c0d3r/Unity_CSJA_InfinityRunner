@@ -33,6 +33,11 @@ public class Enemy : MonoBehaviour
             ApplyDamage(other.GetComponent<Projectile>().damage);
         }
 
+        if (other.CompareTag("supershoot"))
+        {            
+            ApplyDamage(other.GetComponent<Projectile>().damage);
+        }
+
         if (other.CompareTag("Player"))
         {
             player.OnHit(damage);

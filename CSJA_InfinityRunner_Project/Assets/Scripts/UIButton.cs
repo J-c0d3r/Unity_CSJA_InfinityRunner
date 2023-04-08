@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -8,7 +9,8 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private bool jumpBtn;
     [SerializeField] private bool shootBtn;
 
-    [SerializeField] private GameController gc;
+    [SerializeField] private GameController gc;  
+    
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -22,16 +24,21 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (isPressed)
         {
-            if(jumpBtn)
+            if (jumpBtn)
             {
                 gc.playerJump();
             }
 
-            if(shootBtn)
+            if (shootBtn)
             {
                 gc.playerShoot();
             }
 
         }
+    }
+
+    public void SuperShootBtn()
+    {        
+        gc.playerSS();
     }
 }

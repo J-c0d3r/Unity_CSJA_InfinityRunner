@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public Player player;
 
+
     void Start()
     {
         instance = this;
@@ -19,6 +20,11 @@ public class GameController : MonoBehaviour
     public void playerShoot()
     {
         player.OnShoot();
+    }
+
+    public void playerSS()
+    {
+        player.SuperShoot();
     }
 
     public void playerJump()
@@ -42,6 +48,5 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
 
 }

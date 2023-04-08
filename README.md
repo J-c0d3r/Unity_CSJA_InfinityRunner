@@ -10,6 +10,10 @@ Link: 🚧`In progress`🚧
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
 
+    1️⃣v1.5.0
+    ✔️Add supershoot that going increase and destroy everything in the screen
+
+
     1️⃣v1.4.0
     ✔️Platform being randomly generated
     ✔️One more platform added
@@ -88,7 +92,7 @@ Link: 🚧`In progress`🚧
 - [ ] Add two more backgrounds that it'll generate in sometimes
 - [x] Add spwan powerlife(randomly) to increase player's life
   - [x] Add movimentation like a sinusoid
-- [ ] Add supershoot that going increase and destroy everything in the screen
+- [x] Add supershoot that going increase and destroy everything in the screen
 - [ ] Add coins on the platforms that makes generates points
 - [ ] Add time record
 - [ ] Add difficult speed(it'll increases by the time)

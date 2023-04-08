@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rigProj;
     public float speed;
     public int damage;
+    public bool isSuperShoot;
 
     public GameObject expPrefab;
 
@@ -31,7 +32,7 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 8 && !isSuperShoot)
         {
             OnHit();
         }

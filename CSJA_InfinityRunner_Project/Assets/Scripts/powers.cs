@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class powerLife : MonoBehaviour
+public class powers : MonoBehaviour
 {
     [SerializeField] private float yMin, yMax;
     private float timeValue = 0.0f;
