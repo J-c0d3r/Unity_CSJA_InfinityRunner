@@ -8,6 +8,7 @@ TagManager:
   - powerLife
   - powerSS
   - supershoot
+  - coin
   layers:
   - Default
   - TransparentFX

@@ -50,8 +50,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 9
   damage: 1
+  points: 6
   explosionDeath: {fileID: 2017492363048884766, guid: 43816f5a7104a5045846be8292dc1191, type: 3}
+  gc: {fileID: 0}
   speed: 4
+  isKamikaze: 0
 --- !u!212 &4309773431558280307
 SpriteRenderer:
   m_ObjectHideFlags: 0

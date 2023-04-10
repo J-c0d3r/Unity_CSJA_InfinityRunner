@@ -11,6 +11,7 @@ public class FlyEnemy : Enemy
 
     void Start()
     {
+        base.Start();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         rig = GetComponent<Rigidbody2D>();
         Destroy(gameObject, 5f);

@@ -10,6 +10,13 @@ Link: 🚧`In progress`🚧
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
 
+    1️⃣v1.6.0
+    ♻️Readme refactored
+    ✔️Add coins on the platforms that makes generates points
+    ✔️Add time record
+    ✔️Add UI player stats(Leftside(life, points, time), Rightside(points record, time record))
+
+
     1️⃣v1.5.0
     ✔️Add supershoot that going increase and destroy everything in the screen
 
@@ -93,11 +100,10 @@ Link: 🚧`In progress`🚧
 - [x] Add spwan powerlife(randomly) to increase player's life
   - [x] Add movimentation like a sinusoid
 - [x] Add supershoot that going increase and destroy everything in the screen
-- [ ] Add coins on the platforms that makes generates points
-- [ ] Add time record
+- [x] Add coins on the platforms that makes generates points
+- [x] Add time record
 - [ ] Add difficult speed(it'll increases by the time)
-- [ ] Add UI player stats(Leftside(life, points, time), Rightside(points record, time record, totalPoints))
-- [ ] Shows points record, time record and totalPoints in GameOver Scene
+- [x] Add UI player stats(Leftside(life, points, time), Rightside(points record, time record))
 - [x] Add enemy 06 like a kamikaze switching red and normal color
 - [x] Add collison FX 03 when player or enemies explodes
 - [x] Add feedback visual for player when your character receive any damage
@@ -111,7 +117,9 @@ Link: 🚧`In progress`🚧
 - [x] Ajust UI image and position player in front of button fly
 - [x] Player not can grab on walls
 - [x] When player dies the game continuos running for 1.5 seconds
-- [ ] `In progress` General balancement in the game
+- [ ] Fix where player spawn when game starts
+- [ ] Improve menu screen
+- [ ] `In progress` General balancement in the game(player and enemies lifes and damage; player flys; points)
 
 <br><br><br><br><br>
 

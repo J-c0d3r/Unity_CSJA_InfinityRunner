@@ -5,7 +5,8 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
-    public int health;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int health;
     public float speed;
     public float jumpForce;
     private bool isJumping;
@@ -24,8 +25,8 @@ public class Player : MonoBehaviour
     public GameObject superShootPrefab;
     public Transform firePoint;
     public Transform superShootPoint;
-    public GameObject explosionDeath;  
-    
+    public GameObject explosionDeath;
+
     public smoke smoke;
     public Transform smokePoint;
 
@@ -34,10 +35,10 @@ public class Player : MonoBehaviour
     public GameObject ssBtn;
 
     void Start()
-    {       
+    {
         rigPlayer = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        coll = GetComponent<Collider2D>();        
+        coll = GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
         {
             SuperShoot();
         }
-    }    
+    }
 
     public void OnShoot()
     {
@@ -71,7 +72,7 @@ public class Player : MonoBehaviour
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             timeShoot = 0f;
         }
-        
+
     }
 
     public void SuperShoot()
@@ -88,7 +89,7 @@ public class Player : MonoBehaviour
     {
         smoke.createSmoke();
         rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        playerAnim.SetBool("jumping", true);       
+        playerAnim.SetBool("jumping", true);
         isJumping = true;
     }
 
@@ -104,7 +105,7 @@ public class Player : MonoBehaviour
     public void OnHit(int dmg)
     {
         if (!recovery)
-        {                   
+        {
             health -= dmg;
 
             if (health <= 0)
@@ -126,7 +127,7 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(OnHitCorroutine());
         }
-              
+
     }
 
     IEnumerator OnHitCorroutine()
@@ -134,6 +135,16 @@ public class Player : MonoBehaviour
         recovery = true;
         yield return new WaitForSeconds(1f);
         recovery = false;
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -151,7 +162,18 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("powerLife"))
         {
             //play audio
-            health += 2;
+            if (health < maxHealth)
+            {
+                for (int i = 1; i <= 5; i++)
+                {
+                    health++;
+                    if (health == maxHealth)
+                    {
+                        break;
+                    }
+                }
+            }
+            
             Destroy(collision.gameObject, 0.05f);
             GameObject obj = Instantiate(collectedFX, collision.transform.position, collision.transform.rotation);
             Destroy(obj, 0.33f);

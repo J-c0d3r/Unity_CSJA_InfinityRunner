@@ -7,10 +7,17 @@ public class Enemy : MonoBehaviour
     protected Player player;
     public int health;
     public int damage;
+    public int points;
 
     protected int receiveDmg = 2;
 
     public GameObject explosionDeath;
+    public GameController gc;
+
+    protected void Start()
+    {
+        gc = GameObject.FindObjectOfType<GameController>().GetComponent<GameController>();
+    }
 
     public virtual void ApplyDamage(int dmg)
     {
@@ -22,6 +29,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
             Destroy(e, 0.5f);
+            gc.increasePointsPlayer(points);
         }
     }
 
