@@ -9,6 +9,7 @@ TagManager:
   - powerSS
   - supershoot
   - coin
+  - enemiesBarrier
   layers:
   - Default
   - TransparentFX

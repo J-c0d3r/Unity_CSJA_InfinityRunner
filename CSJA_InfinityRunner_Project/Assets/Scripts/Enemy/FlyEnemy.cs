@@ -11,10 +11,12 @@ public class FlyEnemy : Enemy
 
     void Start()
     {
-        base.Start();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        base.Start();        
         rig = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 5f);
+        
+        //if(isKamikaze)
+            //play audio
+
     }
 
     void FixedUpdate()
@@ -34,5 +36,4 @@ public class FlyEnemy : Enemy
             base.OnTriggerEnter2D(collision);
         }
     }
-
 }

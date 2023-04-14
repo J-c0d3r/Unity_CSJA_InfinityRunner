@@ -9,13 +9,17 @@ public class Player : MonoBehaviour
     [SerializeField] private int health;
     public float speed;
     public float jumpForce;
-    private bool isJumping;
+    //private bool isJumping;
+    //private bool isFlying;
     private int qtySuperShoot = 0;
 
     private bool recovery;
 
     private float shootDelay = 0.1f;
     private float timeShoot;
+
+    private float timeCountDiff;
+    public float maxTimeDiff;
 
     private SpriteRenderer spriteRenderer;
     private Collider2D coll;
@@ -62,6 +66,18 @@ public class Player : MonoBehaviour
         {
             SuperShoot();
         }
+        
+        IncreaseDifficulty();
+    }
+
+    private void IncreaseDifficulty()
+    {
+        timeCountDiff += Time.deltaTime;
+        if (timeCountDiff >= maxTimeDiff)
+        {
+            timeCountDiff = 0;
+            speed = speed * 1.15f;
+        }
     }
 
     public void OnShoot()
@@ -87,10 +103,11 @@ public class Player : MonoBehaviour
 
     public void OnJump()
     {
+        //isFlying = true;
         smoke.createSmoke();
         rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         playerAnim.SetBool("jumping", true);
-        isJumping = true;
+        //isJumping = true;
     }
 
     private void IncreaseQtySuperShoot()
@@ -152,7 +169,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             playerAnim.SetBool("jumping", false);
-            isJumping = false;
+           //isJumping = false;
         }
 
     }

@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53cf6a8053935b546a2e03c114c1c409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionDeath: {fileID: 2017492363048884766, guid: 43816f5a7104a5045846be8292dc1191, type: 3}
   damage: 2
   xAxis: -7
   yAxis: 7

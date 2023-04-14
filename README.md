@@ -10,6 +10,12 @@ Link: 🚧`In progress`🚧
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
 
+    1️⃣v1.8.0
+    ♻️BGParallax old was removed.
+    ✔️Add difficult speed(it'll increases by the time). It's configured as 15% the increase for each transition of scenario.
+    ✔️Terrain enemy doesn't respawn if player don't kill him
+
+
     1️⃣v1.7.0
     ♻️Readme refactored
     ✔️Add two(three) more backgrounds that it'll generate in sometimes(parallax effect code was re-created)
@@ -93,7 +99,7 @@ Link: 🚧`In progress`🚧
 
 - [x] Some enemies aren't destroyed by the player's bullet
 - [x] Take off the white line from brackground image
-- [ ] Terrain enemy doesn't respawn if player don't kill him
+- [x] Terrain enemy doesn't respawn if player don't kill him
 
 <br>
 
@@ -108,7 +114,7 @@ Link: 🚧`In progress`🚧
 - [x] Add supershoot that going increase and destroy everything in the screen
 - [x] Add coins on the platforms that makes generates points
 - [x] Add time record
-- [ ] Add difficult speed(it'll increases by the time)
+- [x] Add difficult speed(it'll increases by the time)
 - [x] Add UI player stats(Leftside(life, points, time), Rightside(points record, time record))
 - [x] Add enemy 06 like a kamikaze switching red and normal color
 - [x] Add collison FX 03 when player or enemies explodes

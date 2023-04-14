@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
 
     protected void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gc = GameObject.FindObjectOfType<GameController>().GetComponent<GameController>();
     }
 
@@ -52,5 +53,9 @@ public class Enemy : MonoBehaviour
             ApplyDamage(receiveDmg);
         }
 
+        if (other.CompareTag("enemiesBarrier"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

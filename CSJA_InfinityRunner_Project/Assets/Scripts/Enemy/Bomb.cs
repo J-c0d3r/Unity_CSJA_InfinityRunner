@@ -6,11 +6,11 @@ public class Bomb : MonoBehaviour
 {
     private Rigidbody2D rigBomb;
     private Player player;
+    public GameObject explosionDeath;
 
     public int damage;
     public float xAxis;
     public float yAxis;
-
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class Bomb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.OnHit(damage);
+            Destroy(Instantiate(explosionDeath, transform.position, transform.rotation), 0.5f);
         }
     }
-
 }

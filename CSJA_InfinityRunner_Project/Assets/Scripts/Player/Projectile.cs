@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rigProj = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 1.25f);
     }
 
     private void FixedUpdate()
