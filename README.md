@@ -10,6 +10,11 @@ Link: 🚧`In progress`🚧
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
 
+    1️⃣v1.7.0
+    ♻️Readme refactored
+    ✔️Add two(three) more backgrounds that it'll generate in sometimes(parallax effect code was re-created)
+
+
     1️⃣v1.6.0
     ♻️Readme refactored
     ✔️Add coins on the platforms that makes generates points
@@ -68,6 +73,7 @@ Link: 🚧`In progress`🚧
 
     0️⃣v0.0.0
     ✔️Repository created
+    ✔️Game created, initial of project: player, parallax scenario, 2 enemies, fly button and shoot button, just first step about creation project.
 
 </details>
 
@@ -96,7 +102,7 @@ Link: 🚧`In progress`🚧
 - [x] Change mecanic that player jump to player fly
 - [x] Generation platforms with aleatory
   - [x] Add one more platform
-- [ ] Add two more backgrounds that it'll generate in sometimes
+- [x] Add two more backgrounds that it'll generate in sometimes
 - [x] Add spwan powerlife(randomly) to increase player's life
   - [x] Add movimentation like a sinusoid
 - [x] Add supershoot that going increase and destroy everything in the screen
