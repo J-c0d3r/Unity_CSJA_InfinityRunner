@@ -9,17 +9,19 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private bool jumpBtn;
     [SerializeField] private bool shootBtn;
 
-    [SerializeField] private GameController gc;  
-    
+    [SerializeField] private GameController gc;
+
 
     public void OnPointerDown(PointerEventData eventData)
     {
         isPressed = true;
     }
+
     public void OnPointerUp(PointerEventData eventData)
     {
         isPressed = false;
     }
+
     private void FixedUpdate()
     {
         if (isPressed)
@@ -33,12 +35,11 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 gc.playerShoot();
             }
-
         }
     }
 
     public void SuperShootBtn()
-    {        
+    {
         gc.playerSS();
     }
 }

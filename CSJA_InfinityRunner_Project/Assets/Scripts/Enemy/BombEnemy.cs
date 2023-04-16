@@ -10,6 +10,12 @@ public class BombEnemy : Enemy
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private Transform firePoint;
 
+    void Start()
+    {
+        base.Start();
+        Destroy(gameObject, 50f);
+    }
+
     void Update()
     {
         throwCount += Time.deltaTime;
@@ -19,5 +25,5 @@ public class BombEnemy : Enemy
             Instantiate(bombPrefab, firePoint.position, firePoint.rotation);
             throwCount = 0f;
         }
-    }
+    }    
 }

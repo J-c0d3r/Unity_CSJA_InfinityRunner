@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int health;
     public float speed;
     public float jumpForce;
+    private bool isDead;
     //private bool isJumping;
     //private bool isFlying;
     private int qtySuperShoot = 0;
@@ -38,11 +39,14 @@ public class Player : MonoBehaviour
 
     public GameObject ssBtn;
 
+    private Audio_Player audioManager;
+
     void Start()
     {
         rigPlayer = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         coll = GetComponent<Collider2D>();
+        audioManager = GetComponent<Audio_Player>();
     }
 
     private void FixedUpdate()
@@ -66,7 +70,7 @@ public class Player : MonoBehaviour
         {
             SuperShoot();
         }
-        
+
         IncreaseDifficulty();
     }
 
@@ -82,32 +86,42 @@ public class Player : MonoBehaviour
 
     public void OnShoot()
     {
-        timeShoot += Time.deltaTime;
-        if (timeShoot >= shootDelay)
+        if (!isDead)
         {
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            timeShoot = 0f;
+            timeShoot += Time.deltaTime;
+            if (timeShoot >= shootDelay)
+            {
+                audioManager.PlaySFX(audioManager.player_shoot, 0.7f);
+                Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                timeShoot = 0f;
+            }
         }
-
     }
 
     public void SuperShoot()
     {
-        if (qtySuperShoot >= 1)
+        if (!isDead)
         {
-            Instantiate(superShootPrefab, superShootPoint.position, superShootPoint.rotation);
-            qtySuperShoot--;
-            ssBtn.SetActive(false);
+            if (qtySuperShoot >= 1)
+            {
+                audioManager.PlaySFX(audioManager.player_shootSS, 1f);
+                Instantiate(superShootPrefab, superShootPoint.position, superShootPoint.rotation);
+                qtySuperShoot--;
+                ssBtn.SetActive(false);
+            }
         }
     }
 
     public void OnJump()
     {
-        //isFlying = true;
-        smoke.createSmoke();
-        rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        playerAnim.SetBool("jumping", true);
-        //isJumping = true;
+        if (!isDead)
+        {
+            //isFlying = true;
+            smoke.createSmoke();
+            rigPlayer.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            playerAnim.SetBool("jumping", true);
+            //isJumping = true;
+        }
     }
 
     private void IncreaseQtySuperShoot()
@@ -127,24 +141,22 @@ public class Player : MonoBehaviour
 
             if (health <= 0)
             {
-                //play audio    
+                //audioManager.PlaySFX(audioManager.player_death);
                 GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
                 Destroy(e, 0.33f);
                 coll.enabled = false;
                 spriteRenderer.enabled = false;
+                isDead = true;
                 GameController.instance.ShowGameOver();
             }
             else
             {
-                //play audio    
+                audioManager.PlaySFX(audioManager.player_hurt, 1);
                 playerAnim.SetTrigger("hit");
+
+                StartCoroutine(OnHitCorroutine());
             }
         }
-        else
-        {
-            StartCoroutine(OnHitCorroutine());
-        }
-
     }
 
     IEnumerator OnHitCorroutine()
@@ -169,7 +181,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             playerAnim.SetBool("jumping", false);
-           //isJumping = false;
+            //isJumping = false;
         }
 
     }
@@ -178,7 +190,7 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("powerLife"))
         {
-            //play audio
+            audioManager.PlaySFX(audioManager.powerUp_Life, 1);
             if (health < maxHealth)
             {
                 for (int i = 1; i <= 5; i++)
@@ -190,7 +202,7 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            
+
             Destroy(collision.gameObject, 0.05f);
             GameObject obj = Instantiate(collectedFX, collision.transform.position, collision.transform.rotation);
             Destroy(obj, 0.33f);
@@ -198,7 +210,7 @@ public class Player : MonoBehaviour
 
         if (collision.CompareTag("powerSS"))
         {
-            //play audio
+            audioManager.PlaySFX(audioManager.powerUp_SS, 1);
             IncreaseQtySuperShoot();
             Destroy(collision.gameObject, 0.05f);
             GameObject obj = Instantiate(collectedFX, collision.transform.position, collision.transform.rotation);

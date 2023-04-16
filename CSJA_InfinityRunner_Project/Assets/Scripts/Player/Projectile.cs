@@ -14,8 +14,7 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        rigProj = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 1.25f);
+        rigProj = GetComponent<Rigidbody2D>();        
     }
 
     private void FixedUpdate()
@@ -35,6 +34,11 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.layer == 8 && !isSuperShoot)
         {
             OnHit();
+        }
+
+        if (other.gameObject.CompareTag("shootBarrier"))
+        {
+            Destroy(gameObject);
         }
 
     }

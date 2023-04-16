@@ -8,20 +8,24 @@ public class Coin : MonoBehaviour
 
     public GameObject fxCollected;
     public GameController gc;
+    private AudioSource audio;
 
     private void Start()
     {
         gc = FindObjectOfType<GameController>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {            
-            GameObject go = Instantiate(fxCollected, transform.position, transform.rotation);
-            Destroy(go, 0.33f);
-            Destroy(gameObject);
+            audio.Play();
             gc.increasePointsPlayer(points);
+            GameObject go = Instantiate(fxCollected, transform.position, transform.rotation);
+            Destroy(go, 0.33f);            
+            Destroy(gameObject, 0.14f);
+
         }
     }
 

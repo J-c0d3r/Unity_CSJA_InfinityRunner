@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public void StartGame()
+    private AudioSource audioManager;
+    public AudioClip audioBtn;
+
+    private void Start()
     {
-        SceneManager.LoadScene(1);
+        audioManager = GetComponent<AudioSource>();
     }
 
+    public void BtnStartGame()
+    {
+        audioManager.PlayOneShot(audioBtn);
+        SceneManager.LoadScene(1);
+    }
 }

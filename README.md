@@ -10,6 +10,14 @@ Link: 🚧`In progress`🚧
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
 
+    1️⃣v1.9.0
+    ✔️Add in general sounds in the game.
+    ✔️Add button and interface pause
+    🐛Fix enemy terrain death
+    🛠️Fix first platform where player spawn when game starts
+    ♻️Some code refactored like fix double audio when player hurts, block controls when player die, set the platform A always as first and others little stuffs.
+
+
     1️⃣v1.8.0
     ♻️BGParallax old was removed.
     ✔️Add difficult speed(it'll increases by the time). It's configured as 15% the increase for each transition of scenario.
@@ -120,7 +128,8 @@ Link: 🚧`In progress`🚧
 - [x] Add collison FX 03 when player or enemies explodes
 - [x] Add feedback visual for player when your character receive any damage
 - [x] Add smoke FX when player are flying
-- [ ] Add sounds in the game(player fly, player shoot, enemies and player death, enemy shoot, coin collected and background song)
+- [x] Add sounds in the game(player fly, player shoot, enemies and player death, enemy shoot, coin collected, background song, sound button)
+- [x] Add button pause
 
 <br>
 
@@ -129,7 +138,7 @@ Link: 🚧`In progress`🚧
 - [x] Ajust UI image and position player in front of button fly
 - [x] Player not can grab on walls
 - [x] When player dies the game continuos running for 1.5 seconds
-- [ ] Fix where player spawn when game starts
+- [x] Fix first platform where player spawn when game starts
 - [ ] Improve menu screen
 - [ ] `In progress` General balancement in the game(player and enemies lifes and damage; player flys; points)
 

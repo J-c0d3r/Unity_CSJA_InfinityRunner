@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyEnemy : Enemy
-{    
+{
     private Rigidbody2D rig;
     public float speed;
 
@@ -11,12 +11,11 @@ public class FlyEnemy : Enemy
 
     void Start()
     {
-        base.Start();        
+        base.Start();
         rig = GetComponent<Rigidbody2D>();
-        
+
         //if(isKamikaze)
             //play audio
-
     }
 
     void FixedUpdate()
@@ -25,7 +24,7 @@ public class FlyEnemy : Enemy
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
-    {        
+    {
         if (isKamikaze)
         {
             base.receiveDmg = health;

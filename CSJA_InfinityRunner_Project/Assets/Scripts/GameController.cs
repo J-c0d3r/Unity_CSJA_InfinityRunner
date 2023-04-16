@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.WSA;
 
 public class GameController : MonoBehaviour
 {
@@ -11,12 +10,17 @@ public class GameController : MonoBehaviour
     private float second;
     private int minute;
     private bool wasTimeStarted;
+    private bool isPaused;
 
 
-
+    public GameObject panelPauseGame;
     public static GameController instance;
     public GameObject gameOverPanel;
     public Player player;
+    public AudioMusic_Background audioMusicBG_Manager;
+    public AudioSource audioManager;
+    public AudioClip audio_GameOver;
+    public AudioClip audio_Btn;
 
     [SerializeField] private Text pointsTxt;
     [SerializeField] private Text secondsTimeTxt;
@@ -31,6 +35,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        audioManager = GetComponent<AudioSource>();
+
         instance = this;
         Time.timeScale = 1f;
         wasTimeStarted = true;
@@ -50,11 +56,23 @@ public class GameController : MonoBehaviour
                 second = 0;
                 minute++;
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (!isPaused)
+                {
+                    PauseGame();
+                }
+                else
+                {
+                    ResumeGame();
+                }
+                isPaused = !isPaused;
+            }
         }
 
         secondsTimeTxt.text = second.ToString("00");
         minutesTimeTxt.text = minute.ToString("00");
-
 
         lifeImg.fillAmount = ((float)player.GetHealth() / (float)player.GetMaxHealth());
         lifeImg.color = new Color32((byte)(140 + (lifeImg.fillAmount * 115)), (byte)(lifeImg.fillAmount * 255), 54, 255);
@@ -85,6 +103,8 @@ public class GameController : MonoBehaviour
 
     public void ShowGameOver()
     {
+        audioMusicBG_Manager.gameOver = true;
+        audioManager.PlayOneShot(audio_GameOver);
         wasTimeStarted = false;
         StartCoroutine(ShowGameOverCoroutine());
     }
@@ -111,8 +131,22 @@ public class GameController : MonoBehaviour
     }
 
     public void RestartGame()
-    {
+    {        
         SceneManager.LoadScene(0);
+    }
+
+    public void PauseGame()
+    {
+        audioManager.PlayOneShot(audio_Btn);
+        panelPauseGame.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        audioManager.PlayOneShot(audio_Btn);
+        panelPauseGame.SetActive(false);
+        Time.timeScale = 1f;
     }
 
 }

@@ -18,10 +18,14 @@ public class SpawnPlatform : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        for (int i = 0; i < platform.Count; i++)
+        GameObject obj = Instantiate(platform[0], new Vector2(0 * 30, -4.5f), transform.rotation);
+        currentListPlatform.Add(obj);
+        offset += 30f;
+
+        for (int i = 1; i < platform.Count; i++)
         {
             int num = Random.Range(0, 4);
-            GameObject obj = Instantiate(platform[num], new Vector2(i * 30, -4.5f), transform.rotation);
+            obj = Instantiate(platform[num], new Vector2(i * 30, -4.5f), transform.rotation);
             currentListPlatform.Add(obj);
             offset += 30f;
         }
@@ -31,12 +35,10 @@ public class SpawnPlatform : MonoBehaviour
 
     }
 
-
     void Update()
     {
         Move();
     }
-
 
     void Move()
     {
