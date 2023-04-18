@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     private float timeCountDiff;
     public float maxTimeDiff;
 
+    private float diffSpeedBulletPlayer;
+    private float diffSpeedSSPlayer;
+
     private SpriteRenderer spriteRenderer;
     private Collider2D coll;
     private Rigidbody2D rigPlayer;
@@ -47,6 +50,9 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         coll = GetComponent<Collider2D>();
         audioManager = GetComponent<Audio_Player>();
+
+        diffSpeedBulletPlayer = bulletPrefab.GetComponent<Projectile>().speed - speed;
+        diffSpeedSSPlayer = superShootPrefab.GetComponent<Projectile>().speed - speed;
     }
 
     private void FixedUpdate()
@@ -92,7 +98,8 @@ public class Player : MonoBehaviour
             if (timeShoot >= shootDelay)
             {
                 audioManager.PlaySFX(audioManager.player_shoot, 0.7f);
-                Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                GameObject obj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                obj.GetComponent<Projectile>().speed = speed + diffSpeedBulletPlayer;
                 timeShoot = 0f;
             }
         }
@@ -105,7 +112,8 @@ public class Player : MonoBehaviour
             if (qtySuperShoot >= 1)
             {
                 audioManager.PlaySFX(audioManager.player_shootSS, 1f);
-                Instantiate(superShootPrefab, superShootPoint.position, superShootPoint.rotation);
+                GameObject obj = Instantiate(superShootPrefab, superShootPoint.position, superShootPoint.rotation);
+                obj.GetComponent<Projectile>().speed = speed + diffSpeedBulletPlayer;
                 qtySuperShoot--;
                 ssBtn.SetActive(false);
             }
@@ -141,7 +149,7 @@ public class Player : MonoBehaviour
 
             if (health <= 0)
             {
-                //audioManager.PlaySFX(audioManager.player_death);
+                audioManager.PlaySFX(audioManager.player_die, 1f);
                 GameObject e = Instantiate(explosionDeath, transform.position, transform.rotation);
                 Destroy(e, 0.33f);
                 coll.enabled = false;
@@ -193,7 +201,7 @@ public class Player : MonoBehaviour
             audioManager.PlaySFX(audioManager.powerUp_Life, 1);
             if (health < maxHealth)
             {
-                for (int i = 1; i <= 5; i++)
+                for (int i = 1; i <= 10; i++)
                 {
                     health++;
                     if (health == maxHealth)

@@ -7,6 +7,7 @@ public class Audio_Player : MonoBehaviour
     private AudioSource audioS;
     public AudioClip player_shoot;
     public AudioClip player_shootSS;
+    public AudioClip player_die;
     //public AudioClip player_jetpack;
     public AudioClip player_hurt;
     public AudioClip powerUp_Life;

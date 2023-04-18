@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 2
+  isSuperShoot: 0
   expPrefab: {fileID: 8892735290023624958, guid: dc0bdc1d342469b4abdd05ba202db525, type: 3}
 --- !u!212 &8524709776623452743
 SpriteRenderer:

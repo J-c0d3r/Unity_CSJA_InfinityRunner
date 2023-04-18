@@ -17,6 +17,8 @@ public class SpawnPowers : MonoBehaviour
 
     void Update()
     {
+
+        //Heart
         timeCountH += Time.deltaTime;
 
         if (timeCountH >= spawnTimeH)
@@ -28,6 +30,7 @@ public class SpawnPowers : MonoBehaviour
             spawnTimeH = Random.Range(15f, 20f);
         }
 
+        //SuperShoot
         timeCountSS += Time.deltaTime;
 
         if (timeCountSS >= spawnTimeSS)

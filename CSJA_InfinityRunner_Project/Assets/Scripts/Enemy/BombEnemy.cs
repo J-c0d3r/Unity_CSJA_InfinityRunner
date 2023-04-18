@@ -10,7 +10,7 @@ public class BombEnemy : Enemy
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private Transform firePoint;
 
-    void Start()
+    new void Start()
     {
         base.Start();
         Destroy(gameObject, 50f);

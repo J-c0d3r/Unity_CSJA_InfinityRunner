@@ -9,7 +9,7 @@ public class FlyEnemy : Enemy
 
     [SerializeField] private bool isKamikaze;
 
-    void Start()
+    new void Start()
     {
         base.Start();
         rig = GetComponent<Rigidbody2D>();

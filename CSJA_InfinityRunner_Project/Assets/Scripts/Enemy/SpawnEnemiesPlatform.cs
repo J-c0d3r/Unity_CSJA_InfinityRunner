@@ -13,11 +13,6 @@ public class SpawnEnemiesPlatform : MonoBehaviour
         CreateEnemy();
     }
 
-    void Update()
-    {
-
-    }
-
     public void Spawn()
     {
         if (currentEnemy == null)

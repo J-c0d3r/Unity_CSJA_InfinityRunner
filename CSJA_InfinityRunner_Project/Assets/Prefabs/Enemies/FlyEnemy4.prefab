@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 8
   damage: 8
-  points: 6
+  points: 10
   explosionDeath: {fileID: 2017492363048884766, guid: 43816f5a7104a5045846be8292dc1191, type: 3}
   gc: {fileID: 0}
   explosionSelf: {fileID: 8300000, guid: 33507797de427d6449205188cada75e8, type: 3}

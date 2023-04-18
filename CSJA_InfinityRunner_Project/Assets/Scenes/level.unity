@@ -891,7 +891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453905881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.88, z: 0}
+  m_LocalPosition: {x: 0, y: 2.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1864,7 +1864,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741384179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.04, z: 0}
+  m_LocalPosition: {x: 0, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2192,7 +2192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078604894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4137,7 +4137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005838087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.8110003, y: 4.08, z: 0}
+  m_LocalPosition: {x: -5.86, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4226,6 +4226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_shoot: {fileID: 8300000, guid: 4c926289c8514d64bb006a9d56f88da3, type: 3}
   player_shootSS: {fileID: 8300000, guid: 656ca81e670520e41991b4643c95c01d, type: 3}
+  player_die: {fileID: 8300000, guid: 33507797de427d6449205188cada75e8, type: 3}
   player_hurt: {fileID: 8300000, guid: 6fbd741c7cb84e54d83d85b7448eaf46, type: 3}
   powerUp_Life: {fileID: 8300000, guid: 62c2643fc0a132d4192a730fa6e98f10, type: 3}
   powerUp_SS: {fileID: 8300000, guid: 1fdb34c1086b5314f973999df96cacbe, type: 3}

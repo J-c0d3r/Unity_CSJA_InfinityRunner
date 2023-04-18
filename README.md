@@ -2,13 +2,22 @@
 
 This project is about a little Infinity Runner game that can be played on PC or Mobile. I started make it in the course module, however after I finished it I decided implement more features and you can check below. If you want to play it check the link also below.
 
-Link: 🚧`In progress`🚧
+Link: https://gamedevcode.itch.io/jetfire
 
 <br>
 <br>
 
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
+
+    1️⃣v2.0.0 - 🏆Released
+    ✔️Improve menu screen
+    🛠️Some ajusts
+    🛠️Ajust in shoot speed when difficulty increase
+    🛠️General balancement in the game
+    🐛Fix bug when game is paused
+
+
 
     1️⃣v1.9.0
     ✔️Add in general sounds in the game.
@@ -108,6 +117,7 @@ Link: 🚧`In progress`🚧
 - [x] Some enemies aren't destroyed by the player's bullet
 - [x] Take off the white line from brackground image
 - [x] Terrain enemy doesn't respawn if player don't kill him
+- [x] Fix bug when game is paused
 
 <br>
 
@@ -139,14 +149,9 @@ Link: 🚧`In progress`🚧
 - [x] Player not can grab on walls
 - [x] When player dies the game continuos running for 1.5 seconds
 - [x] Fix first platform where player spawn when game starts
-- [ ] Improve menu screen
-- [ ] `In progress` General balancement in the game(player and enemies lifes and damage; player flys; points)
+- [x] Improve menu screen
+- [x] General balancement in the game(player and enemies lifes and damage; player flys; points)
 
-<br><br><br><br><br>
+<br>
 
 ---
-
-<details>
-<summary>Help icons</summary>
-⚙️✔️🐛🛠️🚧♻️
-</details>

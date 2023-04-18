@@ -32,7 +32,6 @@ public class GameController : MonoBehaviour
 
 
 
-
     void Start()
     {
         audioManager = GetComponent<AudioSource>();
@@ -43,7 +42,6 @@ public class GameController : MonoBehaviour
 
         bestPointsTxt.text = PlayerPrefs.GetInt("bestPoints").ToString();
         bestTimeTxt.text = PlayerPrefs.GetInt("minute").ToString("00") + ":" + PlayerPrefs.GetInt("second").ToString("00");
-
     }
 
     private void Update()
@@ -66,8 +64,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     ResumeGame();
-                }
-                isPaused = !isPaused;
+                }                
             }
         }
 
@@ -140,6 +137,7 @@ public class GameController : MonoBehaviour
         audioManager.PlayOneShot(audio_Btn);
         panelPauseGame.SetActive(true);
         Time.timeScale = 0f;
+        isPaused = !isPaused;
     }
 
     public void ResumeGame()
@@ -147,6 +145,6 @@ public class GameController : MonoBehaviour
         audioManager.PlayOneShot(audio_Btn);
         panelPauseGame.SetActive(false);
         Time.timeScale = 1f;
+        isPaused = !isPaused;
     }
-
 }
