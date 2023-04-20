@@ -73,7 +73,6 @@ public class GameController : MonoBehaviour
 
         lifeImg.fillAmount = ((float)player.GetHealth() / (float)player.GetMaxHealth());
         lifeImg.color = new Color32((byte)(140 + (lifeImg.fillAmount * 115)), (byte)(lifeImg.fillAmount * 255), 54, 255);
-
     }
 
     public void increasePointsPlayer(int pts)
@@ -107,12 +106,12 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator ShowGameOverCoroutine()
-    {
+    {        
         yield return new WaitForSeconds(1.5f);
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
 
-        if (points > PlayerPrefs.GetInt("bestPoints", points))
+        if (points > PlayerPrefs.GetInt("bestPoints"))
         {
             PlayerPrefs.SetInt("bestPoints", points);
         }
@@ -124,7 +123,7 @@ public class GameController : MonoBehaviour
         {
             PlayerPrefs.SetInt("second", (int)second);
             PlayerPrefs.SetInt("minute", minute);
-        }
+        }        
     }
 
     public void RestartGame()

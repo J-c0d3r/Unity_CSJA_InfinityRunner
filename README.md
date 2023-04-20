@@ -10,13 +10,19 @@ Link: https://gamedevcode.itch.io/jetfire
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
 
-    1️⃣v2.0.0 - 🏆Released
+    2️⃣v2.1.0
+    ✔️Loading Visual
+    ✔️Add fullscreen button
+    ✔️Performance game improved(MaxTextureSize 1024 and ForceFastCompressor)
+    🐛Fix bug, coins weren't saved
+
+
+    2️⃣v2.0.0 - 🏆Released
     ✔️Improve menu screen
     🛠️Some ajusts
     🛠️Ajust in shoot speed when difficulty increase
     🛠️General balancement in the game
     🐛Fix bug when game is paused
-
 
 
     1️⃣v1.9.0
