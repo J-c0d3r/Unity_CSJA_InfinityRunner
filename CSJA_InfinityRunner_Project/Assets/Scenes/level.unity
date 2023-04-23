@@ -4244,15 +4244,15 @@ MonoBehaviour:
   maxTime: 45
   transitionMaxTime: 1
   bgsBack:
-  - {fileID: 1951264914}
-  - {fileID: 314926423}
-  - {fileID: 1791835088}
-  - {fileID: 657595235}
+  - {fileID: 553366645}
+  - {fileID: 1543583151}
+  - {fileID: 648136906}
+  - {fileID: 2065488741}
   bgsFront:
-  - {fileID: 1941006320}
-  - {fileID: 1169457182}
-  - {fileID: 1202283152}
-  - {fileID: 2009383263}
+  - {fileID: 2111847638}
+  - {fileID: 1330033554}
+  - {fileID: 1442937904}
+  - {fileID: 1898900109}
 --- !u!223 &1867175930
 Canvas:
   m_ObjectHideFlags: 0

@@ -69,3 +69,13 @@ Icon?
 ehthumbs.db
 [Tt]humbs.db
 Builds/
+
+.vs/
+/.userprefs
+/.csproj
+/.pidb
+/.suo
+/.sln
+/.user
+/.unityproj
+/*.booproj
