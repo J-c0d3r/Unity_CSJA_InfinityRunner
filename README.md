@@ -10,6 +10,10 @@ Link: https://gamedevcode.itch.io/jetfire
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
 
+    2️⃣v2.1.2
+    ♻️Repository refactored
+
+
     2️⃣v2.1.1
     🐛Fix bug in background
     ♻️.gitignore
