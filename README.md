@@ -1,6 +1,6 @@
 # Unity_CSJA_InfinityRunner
 
-This project is about a little Infinity Runner game that can be played on PC or Mobile. I started make it in the course module, however after I finished it I decided implement more features and you can check below. If you want to play it check the link also below.
+This project is about a little Infinity Runner game that can be played on PC or Mobile. I started making it in the course module, however after I finished it I decided to implement more features and you can check below. If you want to play it check the link also below.
 
 Link: https://gamedevcode.itch.io/jetfire
 
@@ -9,6 +9,10 @@ Link: https://gamedevcode.itch.io/jetfire
 
 <details>
     <summary><strong><font size = "5">Versions</font></strong></summary>
+
+    2️⃣v2.1.3
+    ♻️English text on readme updated
+
 
     2️⃣v2.1.2
     ♻️Repository refactored
@@ -55,13 +59,13 @@ Link: https://gamedevcode.itch.io/jetfire
 
     1️⃣v1.6.0
     ♻️Readme refactored
-    ✔️Add coins on the platforms that makes generates points
+    ✔️Add coins on the platforms that generates points
     ✔️Add time record
     ✔️Add UI player stats(Leftside(life, points, time), Rightside(points record, time record))
 
 
     1️⃣v1.5.0
-    ✔️Add supershoot that going increase and destroy everything in the screen
+    ✔️Add supershoot that is going to increase and destroy everything in the screen
 
 
     1️⃣v1.4.0
@@ -71,19 +75,19 @@ Link: https://gamedevcode.itch.io/jetfire
 
     1️⃣v1.3.0
     ♻️Readme refactored
-    ✔️Add feedback visual for player when your character receive any damage
+    ✔️Add visual feedback for player when your character receive any damage
     ✔️Add smoke FX when player are flying
     ✔️Add enemy 06 like a kamikaze switching red and normal color
-    ✔️Add spwan powerlife(randomly) to increase player's life
+    ✔️Add spawn powerlife(randomly) to increase player's life
         ✔️Add movimentation like a sinusoid
 
 
     1️⃣v1.2.0
     ✔️Add collison FX 03 when player or enemies explodes
     🚧Add enemy 06 like a kamikaze switching red and normal color
-    🚧Add feedback visual for player when your character receive any damage
+    🚧Add visual feedback for player when your character receive any damage
 
-    🛠️When player dies the game continuos running for 1.5 seconds
+    🛠️When player dies the game continues running for 1.5 seconds
     🚧General balancement in the game
 
 
@@ -96,10 +100,10 @@ Link: https://gamedevcode.itch.io/jetfire
     🚧Add enemy 06 like a kamikaze switching red and normal color
 
     🐛Some enemies aren't destroyed by the player's bullet
-    🐛Take off the white line from brackground image
+    🐛Take off the white line from background image
 
     🛠️Ajust UI image and position player in front of button fly
-    🛠️Player not can grab on walls
+    🛠️Player can not grab on walls
     🚧General balancement in the game
 
 
@@ -117,20 +121,20 @@ Link: https://gamedevcode.itch.io/jetfire
 
 <br>
 
-### Some stuffs that I want to implement:
+### Some things that I want to implement:
 
 ✔️Updates after conclusion the module:
 
 - [x] To add Collision in the top of screen
 - [x] Player can jump without limit
-- [x] To change UI icon button's jump
+- [x] To change UI button's jump icon
 
 <br>
 
 🐛Fix Bugs:<br>
 
 - [x] Some enemies aren't destroyed by the player's bullet
-- [x] Take off the white line from brackground image
+- [x] Take off the white line from background image
 - [x] Terrain enemy doesn't respawn if player don't kill him
 - [x] Fix bug when game is paused
 
@@ -139,33 +143,33 @@ Link: https://gamedevcode.itch.io/jetfire
 ✔️Future Updates:<br>
 
 - [x] Change mecanic that player jump to player fly
-- [x] Generation platforms with aleatory
+- [x] Generation platforms with randomness
   - [x] Add one more platform
-- [x] Add two more backgrounds that it'll generate in sometimes
-- [x] Add spwan powerlife(randomly) to increase player's life
+- [x] Add two more backgrounds that it'll generate sometimes
+- [x] Add spawn powerlife(randomly) to increase player's life
   - [x] Add movimentation like a sinusoid
-- [x] Add supershoot that going increase and destroy everything in the screen
-- [x] Add coins on the platforms that makes generates points
+- [x] Add supershoot that is going to increase and destroy everything in the screen
+- [x] Add coins on the platforms that generates points
 - [x] Add time record
 - [x] Add difficult speed(it'll increases by the time)
 - [x] Add UI player stats(Leftside(life, points, time), Rightside(points record, time record))
 - [x] Add enemy 06 like a kamikaze switching red and normal color
 - [x] Add collison FX 03 when player or enemies explodes
-- [x] Add feedback visual for player when your character receive any damage
+- [x] Add visual feedback for player when your character receive any damage
 - [x] Add smoke FX when player are flying
 - [x] Add sounds in the game(player fly, player shoot, enemies and player death, enemy shoot, coin collected, background song, sound button)
-- [x] Add button pause
+- [x] Add pause button
 
 <br>
 
-🛠️Some Ajusts:<br>
+🛠️Some Adjustments:<br>
 
 - [x] Ajust UI image and position player in front of button fly
-- [x] Player not can grab on walls
-- [x] When player dies the game continuos running for 1.5 seconds
+- [x] Player can not grab on walls
+- [x] When player dies the game continues running for 1.5 seconds
 - [x] Fix first platform where player spawn when game starts
 - [x] Improve menu screen
-- [x] General balancement in the game(player and enemies lifes and damage; player flys; points)
+- [x] General balancement in the game(player and enemies lifes and damage; player flies; points)
 
 <br>
 
