@@ -1,3 +1,5 @@
+<strong>Version:</strong> 2021.3.13f1
+
 # Unity_CSJA_InfinityRunner
 
 This project is about a little Infinity Runner game that can be played on PC or Mobile. I started making it in the course module, however after I finished it I decided to implement more features and you can check below. If you want to play it check the link also below.
